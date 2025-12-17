@@ -13,13 +13,14 @@ class AppServiceProvider extends ServiceProvider
     }
 
     public function boot(): void
-    {
-        if (config('app.env') === 'production') {
-            URL::forceScheme('https');
-        }
-
-        $this->app->bind('path.public', function () {
-            return base_path('public');
-        });
+{
+    if (config('app.env') === 'production') {
+        \Illuminate\Support\Facades\URL::forceScheme('https');
     }
+
+    // Pastikan ini ada agar Vite tidak 404
+    $this->app->bind('path.public', function () {
+        return base_path('public');
+    });
+}
 }
