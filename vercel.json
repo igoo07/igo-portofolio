@@ -14,6 +14,7 @@
       "APP_ROUTES_CACHE": "/tmp/routes.php",
       "CACHE_DRIVER": "array",
       "SESSION_DRIVER": "cookie",
+      "APP_KEY": "base64:0FdRqhk/7NehCAdTbQjIPF5Gv2LuIRb9BdgyT3JpQWs=",
       "VIEW_COMPILED_PATH": "/tmp"
     }
   }
