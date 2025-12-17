@@ -18,21 +18,6 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // Tambahkan ini di dalam function boot()
-        if (config('app.env') === 'production') {
-            \Illuminate\Support\Facades\URL::forceScheme('https');
-        }
-
-        // PENTING: Gunakan cara ini agar tidak error saat binding
-        $this->app->bind('path.public', function () {
-            return base_path('public');
-        });
-
-        // Paksa folder storage dan view ke /tmp (Wajib di Vercel)
-        app()->useStoragePath('/tmp');
-        config(['view.compiled' => '/tmp']);
-
-        // Memastikan Laravel mencari aset di folder public yang benar
         $this->app->bind('path.public', function () {
             return base_path('public');
         });
