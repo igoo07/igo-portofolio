@@ -19,14 +19,14 @@ class AppServiceProvider extends ServiceProvider
         }
 
         // Tambahkan ini di dalam function boot()
-if (config('app.env') === 'production') {
-    \Illuminate\Support\Facades\URL::forceScheme('https');
+        if (config('app.env') === 'production') {
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
 
-    // Paksa agar Vite tahu kita di production
-    $this->app->bind('path.public', function () {
-        return base_path('public');
-    });
-}
+        // PENTING: Gunakan cara ini agar tidak error saat binding
+        $this->app->bind('path.public', function () {
+            return base_path('public');
+        });
 
         // Paksa folder storage dan view ke /tmp (Wajib di Vercel)
         app()->useStoragePath('/tmp');
