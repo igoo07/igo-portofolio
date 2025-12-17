@@ -14,17 +14,15 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // Gunakan HTTPS di Vercel
         if (config('app.env') === 'production') {
-            \Illuminate\Support\Facades\URL::forceScheme('https');
+            URL::forceScheme('https');
         }
 
-        // PENTING: Paksa folder storage dan view ke folder sementara Vercel
-        $tmpPath = '/tmp';
-        app()->useStoragePath($tmpPath);
-        config(['view.compiled' => $tmpPath]);
+        // Paksa folder storage dan view ke /tmp (Wajib di Vercel)
+        app()->useStoragePath('/tmp');
+        config(['view.compiled' => '/tmp']);
 
-        // Memastikan Laravel tahu letak folder public di Vercel
+        // Memastikan Laravel mencari aset di folder public yang benar
         $this->app->bind('path.public', function () {
             return base_path('public');
         });
