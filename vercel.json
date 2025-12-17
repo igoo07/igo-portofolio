@@ -10,11 +10,11 @@
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
+      "LOG_CHANNEL": "stderr",
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_ROUTES_CACHE": "/tmp/routes.php",
-      "CACHE_DRIVER": "array",
-      "SESSION_DRIVER": "cookie",
-      "APP_KEY": "base64:0FdRqhk/7NehCAdTbQjIPF5Gv2LuIRb9BdgyT3JpQWs=",
+      "APP_SERVICES_CACHE": "/tmp/services.php",
+      "APP_PACKAGES_CACHE": "/tmp/packages.php",
       "VIEW_COMPILED_PATH": "/tmp"
     }
   }
