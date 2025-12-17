@@ -20,12 +20,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 {
+{
+    // Paksa HTTPS di production
     if (config('app.env') === 'production') {
         \URL::forceScheme('https');
     }
 
-    // Tambahkan ini agar tidak error 500 karena folder storage dikunci
-    app()->useStoragePath('/tmp');
+    // INI KUNCINYA: Memaksa Laravel menulis view ke folder /tmp
+    $viewPath = '/tmp/storage/framework/views';
+    if (!is_dir($viewPath)) {
+        mkdir($viewPath, 0777, true);
+    }
+    config(['view.compiled' => $viewPath]);
+}
 }
     }
 }
