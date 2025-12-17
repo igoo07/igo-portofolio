@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Gunakan HTTPS di Vercel
         if (config('app.env') === 'production') {
-            URL::forceScheme('https');
+            \Illuminate\Support\Facades\URL::forceScheme('https');
         }
 
         // PENTING: Paksa folder storage dan view ke folder sementara Vercel
