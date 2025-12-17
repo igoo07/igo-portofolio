@@ -19,6 +19,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+{
+    if (config('app.env') === 'production') {
+        \URL::forceScheme('https');
+    }
+
+    // Tambahkan ini agar tidak error 500 karena folder storage dikunci
+    app()->useStoragePath('/tmp');
+}
     }
 }
