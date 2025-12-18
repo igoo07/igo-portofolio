@@ -15,9 +15,9 @@
                 <div
                     class="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden flex flex-col hover:border-blue-500/50 transition-all duration-300 group">
                     <div class="h-64 overflow-hidden relative bg-slate-800">
-                        <img src="{{ asset('images/' . $project['image']) }}" alt="{{ $project['title'] }}"
+                        <img src="/images/{{ $project['image'] }}" alt="{{ $project['title'] }}"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                            onerror="this.src='https://via.placeholder.com/800x450/0f172a/3b82f6?text=Gambar+Proyek'">
+                            onerror="this.src='https://via.placeholder.com/800x450/0f172a/3b82f6?text=Gambar+Kosong'">
                         <div class="absolute bottom-4 left-4">
                             <span
                                 class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-md shadow-lg italic">Verified
