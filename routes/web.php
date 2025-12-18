@@ -3,7 +3,7 @@
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/home', function () {
     // Arahkan ke folder layouts dan file portfolio
     return view('layouts.portfolio');
 });
