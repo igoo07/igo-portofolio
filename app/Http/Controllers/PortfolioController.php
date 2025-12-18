@@ -15,9 +15,10 @@ class PortfolioController extends Controller
 
     // Halaman Tentang Saya
     public function about()
-    {
-        return view('about');
-    }
+{
+    // Pastikan tidak ada kodingan aneh di sini
+    return view('about');
+}
 
     // Halaman Pengalaman Kerja
     public function experience()

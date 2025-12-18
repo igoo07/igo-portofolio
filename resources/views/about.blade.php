@@ -3,64 +3,99 @@
 @section('title', 'Tentang Saya')
 
 @section('content')
-    <div class="max-w-5xl mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold text-white mb-12 italic"><span class="text-blue-500">Profil</span> & Kapabilitas</h1>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-white mb-16 italic">
+            <span class="text-blue-500">About</span> me
+        </h1>
 
-        <div class="grid md:grid-cols-2 gap-16 mb-20">
-            <div class="space-y-6">
-                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                    <span class="w-8 h-[2px] bg-blue-500"></span>
-                    Profil Profesional
-                </h2>
-                <p class="text-slate-400 leading-relaxed text-justify">
-                    Saya adalah lulusan Program Studi Informatika dari Universitas Internasional Semen Indonesia. Saya
-                    adalah
-                    seorang pengembang perangkat lunak yang berfokus pada efisiensi kode dan skalabilitas sistem. Memiliki
-                    fondasi kuat dalam arsitektur MVC (Laravel) dan pengembangan antarmuka modern menggunakan ReactJS.
-                </p>
-                <p class="text-slate-400 leading-relaxed text-justify">
-                    Keunikan saya terletak pada perpaduan keahlian teknis dan pemahaman Digital Marketing/SEO. Hal ini
-                    memungkinkan saya membangun produk digital yang tidak hanya berfungsi secara teknis, tetapi juga optimal
-                    dari sisi visibilitas mesin pencari dan pengalaman pengguna (UX).
-                </p>
-                <p class="text-slate-400 leading-relaxed text-justify">
-                    Saya berkomitmen untuk terus beradaptasi dengan teknologi terbaru, terbukti dengan sertifikasi global
-                    yang saya raih untuk memperkuat kredibilitas saya di industri teknologi.
-                </p>
+        <div class="grid md:grid-cols-12 gap-12 items-start mb-24">
+            <div class="md:col-span-5 flex justify-center relative group">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-[100px] group-hover:bg-blue-600/20 transition-all duration-700">
+                </div>
+
+                <div class="relative z-10 w-full max-w-[320px]">
+                    <img src="{{ url('images/ig.png') }}" alt="Helmaesa Diego Putra"
+                        class="relative z-20 w-full h-auto object-contain transition-all duration-700 ease-in-out group-hover:scale-105 drop-shadow-[0_10px_30px_rgba(59,130,246,0.2)]">
+
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-24 z-30 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/80 to-transparent pointer-events-none">
+                    </div>
+                </div>
             </div>
 
-            <div class="space-y-6">
-                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                    <span class="w-8 h-[2px] bg-blue-500"></span>
-                    Pendidikan
+            <div class="md:col-span-7 space-y-6 pt-2">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                    <span class="w-10 h-[2px] bg-blue-500"></span>
+                    Profil
                 </h2>
-                <div class="relative border-l border-slate-800 pl-6 space-y-10">
-                    <div class="relative">
-                        <div class="absolute -left-[30px] top-1 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-950">
-                        </div>
-                        <h4 class="font-bold text-white text-lg leading-tight">S1 Informatika</h4>
-                        <p class="text-blue-500 text-sm font-medium mb-2">Universitas Internasional Semen Indonesia</p>
-                        <p class="text-slate-500 text-xs font-mono uppercase">2021 — 2025</p>
-                    </div>
-                    <div class="relative">
-                        <div
-                            class="absolute -left-[30px] top-1 w-4 h-4 bg-slate-700 rounded-full border-4 border-slate-950">
-                        </div>
-                        <h4 class="font-bold text-white text-lg leading-tight">Bisnis Daring & Pemasaran</h4>
-                        <p class="text-slate-400 text-sm font-medium mb-2">SMK Negeri 1 Bangsri</p>
-                        <p class="text-slate-500 text-xs font-mono uppercase">2018 — 2021</p>
-                    </div>
+                <div class="space-y-5 text-slate-400 leading-relaxed text-justify border-l border-slate-800 pl-6 ml-1">
+                    <p>
+                        Saya adalah lulusan Program Studi Informatika dari Universitas Internasional Semen Indonesia.
+                        Sebagai seorang pengembang perangkat lunak, saya berfokus pada
+                        <span class="text-white font-semibold">efisiensi kode dan skalabilitas sistem</span>.
+                        Memiliki fondasi kuat dalam arsitektur MVC (Laravel) serta pengembangan antarmuka modern menggunakan
+                        ReactJS.
+                    </p>
+                    <p>
+                        Keunikan saya terletak pada perpaduan keahlian teknis dan pemahaman
+                        <span class="text-blue-400 italic">Digital Marketing/SEO</span>. Hal ini memungkinkan saya
+                        membangun produk digital yang tidak hanya berfungsi secara teknis, tetapi juga optimal dari sisi
+                        visibilitas mesin pencari.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="bg-slate-900/50 border border-slate-800 p-10 rounded-3xl">
+        <div class="mb-24">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-3 mb-10">
+                <span class="w-10 h-[2px] bg-blue-500"></span>
+                Pendidikan
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div
+                    class="relative p-8 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-blue-500/30 transition-all duration-500 group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-500 text-xs font-mono mb-4">2021
+                        — 2025</span>
+                    <h4 class="text-white font-bold text-xl mb-1">S1 Informatika</h4>
+                    <p class="text-slate-400 text-sm">Universitas Internasional Semen Indonesia</p>
+                </div>
+
+                <div
+                    class="relative p-8 bg-slate-900/40 border border-slate-800 rounded-2xl hover:border-slate-700 transition-all duration-500 group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-500 text-xs font-mono mb-4">2018
+                        — 2021</span>
+                    <h4 class="text-white font-bold text-xl mb-1">Bisnis Daring & Pemasaran</h4>
+                    <p class="text-slate-400 text-sm">SMK Negeri 1 Bangsri</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900/50 border border-slate-800 p-8 md:p-10 rounded-3xl">
+
             <h2 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+
                 <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+
                 </svg>
+
                 Keahlian Teknis
+
             </h2>
 
             @php
@@ -73,24 +108,22 @@
                     ['name' => 'MySQL', 'icon' => 'mysql', 'color' => '4479A1'],
                     ['name' => 'Figma', 'icon' => 'figma', 'color' => 'F24E1E'],
                     ['name' => 'Git', 'icon' => 'git', 'color' => 'F05032'],
-
-                    // Perbaikan slug ikon agar muncul
-                    ['name' => 'Word', 'icon' => 'microsoftword', 'color' => '2B579A'], // Biru Word
-                    ['name' => 'Excel', 'icon' => 'microsoftexcel', 'color' => '217346'], // Hijau Excel
-                    ['name' => 'Canva', 'icon' => 'canva', 'color' => '00C4CC'], // Toska Canva
+                    ['name' => 'Word', 'icon' => 'microsoftword', 'color' => '2B579A'],
+                    ['name' => 'Excel', 'icon' => 'microsoftexcel', 'color' => '217346'],
+                    ['name' => 'Canva', 'icon' => 'canva', 'color' => '00C4CC'],
                     ['name' => 'VN Editor', 'icon' => 'vlcmediaplayer', 'color' => 'FF8800'],
                 ];
             @endphp
 
-            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 mb-10">
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-5 mb-12">
                 @foreach ($skills as $skill)
                     <div
-                        class="flex flex-col items-center p-6 bg-slate-950 border border-slate-800 rounded-2xl hover:border-blue-500/50 transition-all group shadow-sm">
+                        class="flex flex-col items-center p-6 bg-slate-950/50 border border-slate-800/50 rounded-2xl hover:border-blue-500/40 hover:bg-slate-900 transition-all group">
                         <img src="https://cdn.simpleicons.org/{{ $skill['icon'] }}/{{ $skill['color'] }}"
                             alt="{{ $skill['name'] }}"
-                            class="w-10 h-10 mb-4 group-hover:scale-110 transition-transform duration-300">
+                            class="w-9 h-9 mb-4 group-hover:scale-110 transition-transform duration-300">
                         <span
-                            class="text-[11px] font-bold text-slate-400 group-hover:text-white transition uppercase tracking-tighter text-center">
+                            class="text-[10px] font-bold text-slate-500 group-hover:text-white transition uppercase tracking-widest text-center">
                             {{ $skill['name'] }}
                         </span>
                     </div>
@@ -98,41 +131,25 @@
             </div>
 
             <div
-                class="relative overflow-hidden p-6 bg-slate-900 border border-slate-800 rounded-3xl flex flex-col md:flex-row items-center gap-8 group hover:border-blue-500/50 transition-all duration-500">
-
-                <div
-                    class="relative w-full md:w-48 h-32 rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
+                class="relative overflow-hidden p-6 md:p-8 bg-slate-950 border border-slate-800 rounded-2xl flex flex-col md:flex-row items-center gap-8 group hover:border-blue-500/30 transition-all duration-500">
+                <div class="relative w-full md:w-44 h-28 rounded-xl overflow-hidden bg-slate-900 shadow-inner">
                     <img src="{{ asset('images/sertifikat-oracle.jpg') }}" alt="Oracle Certificate"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60 group-hover:opacity-100"
-                        onerror="this.src='https://via.placeholder.com/400x250/0f172a/3b82f6?text=Preview+Sertifikat'">
-                    <div
-                        class="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                    </div>
+                        class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110">
                 </div>
 
                 <div class="flex-grow text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <p class="text-blue-500 font-bold italic uppercase tracking-[0.2em] text-[10px]">Certification</p>
-                    </div>
-                    <h4 class="text-white font-extrabold text-xl mb-1 tracking-tight">Oracle Certified Foundations Associate
-                    </h4>
-                    <p class="text-slate-400 text-sm italic">Diterbitkan Januari 2025</p>
+                    <p class="text-blue-500 font-bold uppercase tracking-widest text-[9px] mb-2">Certification</p>
+                    <h4 class="text-white font-bold text-xl mb-1">Oracle Certified Foundations Associate</h4>
+                    <p class="text-slate-500 text-sm">Diterbitkan Januari 2025</p>
                 </div>
 
                 <div class="w-full md:w-auto">
-                    <a href="{{ asset('images/sertifikat-oracle.jpg') }}" download="Sertifikat_Oracle_Diego.pdf"
-                        class="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-sm transition-all shadow-lg shadow-blue-500/20 active:scale-95 group/btn">
-                        <svg class="w-5 h-5 transform group-hover/btn:-translate-y-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
+                    <a href="{{ asset('images/sertifikat-oracle.jpg') }}" download
+                        class="inline-block w-full text-center px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-sm transition-all shadow-lg shadow-blue-500/20 active:scale-95">
                         Download PDF
                     </a>
                 </div>
-
-                <div class="absolute -right-6 -bottom-6 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-                    <img src="https://cdn.simpleicons.org/oracle/white" class="w-40 h-40">
-                </div>
             </div>
-        @endsection
+        </div>
+    </div>
+@endsection
