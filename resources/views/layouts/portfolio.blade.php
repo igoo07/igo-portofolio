@@ -171,6 +171,7 @@
                         ['route' => 'about', 'label' => 'About'],
                         ['route' => 'experience', 'label' => 'Exp'], // Diperpendek untuk mobile
                         ['route' => 'projects.index', 'label' => 'Work'], // Diperpendek untuk mobile
+                        ['route' => 'contact', 'label' => 'Contact'],
                     ];
                 @endphp
                 @foreach ($navItems as $item)
