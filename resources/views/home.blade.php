@@ -18,7 +18,7 @@
                 Saya juga berpengalaman dalam strategi Digital Marketing dan Search Engine Optimation (SEO)
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                <a href="{{ asset('assets/cv-igo.pdf') }}" download="CV_Helmaesa_Diego_Putra.pdf"
+                <a href="{{ asset('assets/CV_Helmaesa_Diego_Putra.pdf') }}" download="CV_Helmaesa_Diego_Putra.pdf"
                     class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95 w-full sm:w-auto">
 
                     <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none"
