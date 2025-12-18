@@ -13,14 +13,14 @@ class AppServiceProvider extends ServiceProvider
     }
 
     public function boot(): void
-{
-    if (config('app.env') === 'production') {
-        \Illuminate\Support\Facades\URL::forceScheme('https');
-    }
+    {
+        if (config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
 
-    // Pastikan ini ada agar Vite tidak 404
-    $this->app->bind('path.public', function () {
-        return base_path('public');
-    });
-}
+        // Memaksa Laravel mengenali folder public di Vercel
+        $this->app->bind('path.public', function () {
+            return base_path('public');
+        });
+    }
 }
