@@ -22,6 +22,15 @@
     </script>
 
     <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         /* TRANSISI WARNA HALUS */
         body {
             transition: background-color 0.5s ease, color 0.5s ease;
@@ -141,51 +150,53 @@
         </div>
     </div>
 
-    <header class="fixed w-full top-0 z-50 px-6 py-6">
+    <header class="fixed w-full top-0 z-50 px-4 md:px-6 py-4 md:py-6">
         <nav
-            class="max-w-6xl mx-auto glass-effect rounded-2xl px-4 md:px-8 h-20 flex justify-between items-center shadow-2xl">
-            <a href="{{ route('home') }}" class="flex items-center gap-2 group">
+            class="max-w-6xl mx-auto glass-effect rounded-2xl px-3 md:px-8 h-20 flex justify-between items-center shadow-2xl">
+
+            <a href="{{ route('home') }}" class="flex items-center gap-2 group shrink-0">
                 <div
-                    class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30 group-hover:rotate-12 transition-transform">
-                    <span class="text-white font-black text-xl">I</span>
+                    class="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30 group-hover:rotate-12 transition-transform">
+                    <span class="text-white font-black text-lg md:text-xl">I</span>
                 </div>
-                <span class="font-black text-xl tracking-tighter text-white uppercase italic">GO<span
+                <span class="font-black text-lg md:text-xl tracking-tighter text-white uppercase italic">GO<span
                         class="text-blue-500">.</span></span>
             </a>
 
-            <div class="hidden md:flex items-center bg-slate-900/50 p-1.5 rounded-xl border border-white/5">
+            <div
+                class="flex items-center bg-slate-900/50 p-1 md:p-1.5 rounded-xl border border-white/5 mx-2 overflow-x-auto no-scrollbar">
                 @php
                     $navItems = [
                         ['route' => 'home', 'label' => 'Home'],
                         ['route' => 'about', 'label' => 'About'],
-                        ['route' => 'experience', 'label' => 'Experience'],
-                        ['route' => 'projects.index', 'label' => 'Projects'],
+                        ['route' => 'experience', 'label' => 'Exp'], // Diperpendek untuk mobile
+                        ['route' => 'projects.index', 'label' => 'Work'], // Diperpendek untuk mobile
                     ];
                 @endphp
                 @foreach ($navItems as $item)
                     <a href="{{ route($item['route']) }}"
-                        class="px-5 py-2.5 rounded-lg text-[13px] font-bold tracking-wide transition-all {{ request()->routeIs($item['route']) ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-400 hover:text-white' }}">
+                        class="px-3 md:px-5 py-2 md:py-2.5 rounded-lg text-[11px] md:text-[13px] font-bold tracking-wide transition-all whitespace-nowrap {{ request()->routeIs($item['route']) ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-400 hover:text-white' }}">
                         {{ $item['label'] }}
                     </a>
                 @endforeach
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 md:gap-4 shrink-0">
                 <button id="theme-toggle"
-                    class="p-2.5 rounded-xl bg-slate-800/50 light:bg-white border border-white/10 light:border-slate-200 transition-all active:scale-90">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-slate-700" fill="currentColor"
-                        viewBox="0 0 20 20">
+                    class="p-2 md:p-2.5 rounded-xl bg-slate-800/50 border border-white/10 transition-all active:scale-90">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4 md:w-5 md:h-5 text-slate-700"
+                        fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-yellow-400" fill="currentColor"
-                        viewBox="0 0 20 20">
+                    <svg id="theme-toggle-light-icon" class="hidden w-4 h-4 md:w-5 md:h-5 text-yellow-400"
+                        fill="currentColor" viewBox="0 0 20 20">
                         <path
                             d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z">
                         </path>
                     </svg>
                 </button>
                 <a href="{{ route('contact') }}"
-                    class="hidden sm:block px-6 py-3 bg-white text-black hover:bg-blue-600 hover:text-white rounded-xl text-sm font-black transition-all shadow-xl active:scale-95">
+                    class="hidden md:block px-6 py-3 bg-white text-black hover:bg-blue-600 hover:text-white rounded-xl text-sm font-black transition-all shadow-xl active:scale-95">
                     Contact
                 </a>
             </div>
