@@ -171,7 +171,6 @@
                         ['route' => 'about', 'label' => 'About'],
                         ['route' => 'experience', 'label' => 'Exp'], // Diperpendek untuk mobile
                         ['route' => 'projects.index', 'label' => 'Work'], // Diperpendek untuk mobile
-                        ['route' => 'contact', 'label' => 'Contact'],
                     ];
                 @endphp
                 @foreach ($navItems as $item)
@@ -197,7 +196,7 @@
                     </svg>
                 </button>
                 <a href="{{ route('contact') }}"
-                    class="flex items-center justify-center px-3 md:px-6 py-2 md:py-3 bg-white text-black hover:bg-blue-600 hover:text-white rounded-xl text-[10px] md:text-sm font-black transition-all shadow-xl active:scale-95 shrink-0">
+                    class="hidden md:block px-6 py-3 bg-white text-black hover:bg-blue-600 hover:text-white rounded-xl text-sm font-black transition-all shadow-xl active:scale-95">
                     Contact
                 </a>
             </div>
