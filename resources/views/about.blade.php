@@ -31,17 +31,20 @@
                 </h2>
                 <div class="space-y-5 text-slate-400 leading-relaxed text-justify border-l border-slate-800 pl-6 ml-1">
                     <p>
-                        Saya adalah lulusan Program Studi Informatika dari Universitas Internasional Semen Indonesia.
-                        Sebagai seorang pengembang perangkat lunak, saya berfokus pada
-                        <span class="text-white font-semibold">efisiensi kode dan skalabilitas sistem</span>.
-                        Memiliki fondasi kuat dalam arsitektur MVC (Laravel) serta pengembangan antarmuka modern menggunakan
-                        ReactJS.
+                        Lulusan Informatika UISI yang memiliki spesialisasi ganda dalam
+                        <span class="text-white font-semibold">Software Engineering dan Digital Marketing.</span>.
+                        Berpengalaman mengembangkan sistem informasi berbasis web (Laravel & ReactJS) dan mengoptimalkan
+                        visibilitas digital melalui strategi SEO serta manajemen marketplace.
                     </p>
                     <p>
-                        Keunikan saya terletak pada perpaduan keahlian teknis dan pemahaman
-                        <span class="text-blue-400 italic">Digital Marketing/SEO</span>. Hal ini memungkinkan saya
-                        membangun produk digital yang tidak hanya berfungsi secara teknis, tetapi juga optimal dari sisi
-                        visibilitas mesin pencari.
+                        Telah tersertifikasi sebagai
+                        <span class="text-blue-400 italic">Oracle Certified
+                            Foundations Associate</span>, menunjukkan standar profesional dalam infrastruktur cloud dan
+                        pengembangan sistem.
+                        Saya adalah pribadi yang adaptif, komunikatif, dan
+                        memiliki jiwa semangat tinggi, dapat diandalkan, serta mahir dalam berkolaborasi lintas departemen
+                        untuk
+                        memberikan solusi digital yang komprehensif.
                     </p>
                 </div>
             </div>
@@ -108,22 +111,33 @@
                     ['name' => 'MySQL', 'icon' => 'mysql', 'color' => '4479A1'],
                     ['name' => 'Figma', 'icon' => 'figma', 'color' => 'F24E1E'],
                     ['name' => 'Git', 'icon' => 'git', 'color' => 'F05032'],
+                    /* Perbaikan Slug Disini */
                     ['name' => 'Word', 'icon' => 'microsoftword', 'color' => '2B579A'],
                     ['name' => 'Excel', 'icon' => 'microsoftexcel', 'color' => '217346'],
                     ['name' => 'Canva', 'icon' => 'canva', 'color' => '00C4CC'],
+                    /* VN Editor menggunakan logo alternatif video/vlc */
                     ['name' => 'VN Editor', 'icon' => 'vlcmediaplayer', 'color' => 'FF8800'],
                 ];
             @endphp
 
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-5 mb-12">
                 @foreach ($skills as $skill)
-                    <div
-                        class="flex flex-col items-center p-6 bg-slate-950/50 border border-slate-800/50 rounded-2xl hover:border-blue-500/40 hover:bg-slate-900 transition-all group">
-                        <img src="https://cdn.simpleicons.org/{{ $skill['icon'] }}/{{ $skill['color'] }}"
-                            alt="{{ $skill['name'] }}"
-                            class="w-9 h-9 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div class="glass-effect group flex flex-col items-center p-6 rounded-2xl border border-white/5 hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-2 shadow-lg"
+                        data-aos="zoom-in" data-aos-delay="{{ $loop->index * 50 }}">
+
+                        <div class="relative mb-4">
+                            <div
+                                class="absolute inset-0 bg-[#{{ $skill['color'] }}]/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                            </div>
+
+                            <img src="https://cdn.simpleicons.org/{{ $skill['icon'] }}/{{ $skill['color'] }}"
+                                alt="{{ $skill['name'] }}" loading="lazy"
+                                class="w-10 h-10 relative z-10 group-hover:scale-110 transition-transform duration-500 antialiased"
+                                onerror="this.onerror=null; this.src='https://cdn.simpleicons.org/{{ $skill['icon'] }}';">
+                        </div>
+
                         <span
-                            class="text-[10px] font-bold text-slate-500 group-hover:text-white transition uppercase tracking-widest text-center">
+                            class="text-[10px] font-bold adaptive-text opacity-60 group-hover:opacity-100 group-hover:text-blue-500 transition-all uppercase tracking-[0.2em] text-center">
                             {{ $skill['name'] }}
                         </span>
                     </div>

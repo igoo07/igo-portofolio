@@ -31,30 +31,30 @@ class PortfolioController extends Controller
     $projects = [
         [
             'title' => 'Audit Mutu Internal UISI',
-            'description' => 'Sistem informasi untuk mengevaluasi standar mutu akademik di UISI.',
+            'description' => 'Sistem informasi untuk mengevaluasi standar mutu bidang akademik di UISI.',
             'details' => 'Bertanggung jawab dalam pengembangan modul penilaian, integrasi database antara sistem lama dan baru, serta memastikan keamanan data hasil audit menggunakan enkripsi standar.',
-            'tech' => ['Laravel', 'ReactJS', 'MySQL', 'JWT'],
+            'tech' => ['Laravel', 'ReactJS', 'MySQL', 'SDLC', 'Prototyping'],
             'image' => 'AMI.jpeg' // Simpan gambar ini di public/images/
         ],
         [
             'title' => 'Travel-App (Open Trip)',
             'description' => 'Platform manajemen reservasi untuk penyedia jasa paket wisata.',
             'details' => 'Membangun fitur manajemen kuota otomatis, sistem booking real-time, dan dashboard admin untuk memantau status pembayaran serta manifes penumpang.',
-            'tech' => ['Laravel', 'PHP', 'Tailwind', 'Midtrans'],
+            'tech' => ['Laravel', 'PHP', 'Tailwind'],
             'image' => 'TRAVELAPP.jpeg'
         ],
         [
             'title' => 'Misidoc - Digital Health',
             'description' => 'Aplikasi kesehatan untuk menghubungkan pasien dengan fasilitas medis.',
             'details' => 'Mengembangkan antarmuka pencarian dokter berdasarkan spesialisasi dan lokasi terdekat, serta fitur riwayat rekam medis digital yang aman bagi pengguna.',
-            'tech' => ['Laravel', 'PostgreSQL', 'Livewire'],
+            'tech' => ['Laravel', 'MySQL', 'Bootsrap'],
             'image' => 'MISIDOC.jpeg'
         ],
         [
             'title' => 'IoT Monitoring Tempat Sampah',
             'description' => 'Sistem pintar pemantau volume sampah berbasis IoT.',
             'details' => 'Integrasi perangkat keras menggunakan sensor ultrasonik HC-SR04 dan Raspberry Pi Pico untuk mengirimkan data volume ke dashboard web secara berkala melalui protokol HTTP.',
-            'tech' => ['IoT', 'Raspberry Pi Pico', 'C++', 'Web'],
+            'tech' => ['IoT', 'Raspberry Pi Pico', 'Thonny', 'Web'],
             'image' => 'IOT.jpeg'
         ],
     ];

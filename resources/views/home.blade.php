@@ -13,16 +13,13 @@
                     Diego
                     Putra</span>
             </h1>
-            <p class="text-slate-400 text-lg mb-10 max-w-xl mx-auto lg:mx-0">
-                Lulusan Informatika UISI yang berdedikasi membangun aplikasi web interaktif menggunakan Laravel dan ReactJS.
-                Saya juga berpengalaman dalam strategi Digital Marketing dan Search Engine Optimation (SEO)
-            </p>
+
             <div class="flex flex-wrap justify-center lg:justify-start gap-4">
                 <a href="/assets/cv_igo.pdf" download="cv_igo.pdf"
                     class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95 w-full sm:w-auto">
 
-                    <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>

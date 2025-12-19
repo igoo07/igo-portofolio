@@ -3,14 +3,17 @@
 @section('title', 'Kontak')
 
 @section('content')
-    <div class="max-w-6xl mx-auto px-6 text-center">
-        <h1 class="text-4xl font-bold text-white mb-6 italic">Mari <span class="text-blue-500">Terhubung!</span></h1>
-        <p class="text-slate-400 mb-12">Saya terbuka untuk kolaborasi proyek atau peluang kerja full-time.</p>
+    <div class="max-w-6xl mx-auto px-6 text-center py-12">
+        <h1 class="text-4xl font-bold text-white mb-6 italic" data-aos="fade-up">Mari <span
+                class="text-blue-500">Terhubung!</span></h1>
+        <p class="text-slate-400 mb-12" data-aos="fade-up" data-aos-delay="100">Saya terbuka untuk kolaborasi proyek atau
+            peluang kerja full-time.</p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <a href="mailto:helmaesad@gmail.com"
-                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)] transition-all duration-300 group">
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-red-500 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)] transition-all duration-300 group"
+                data-aos="zoom-in">
                 <div class="text-red-500 mb-4 flex justify-center group-hover:scale-110 transition-transform">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -22,7 +25,8 @@
             </a>
 
             <a href="https://linkedin.com/in/helmaesa-diego-putra-013546351/" target="_blank"
-                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-[#0077b5] hover:shadow-[0_0_20px_rgba(0,119,181,0.2)] transition-all duration-300 group">
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-[#0077b5] hover:shadow-[0_0_20px_rgba(0,119,181,0.2)] transition-all duration-300 group"
+                data-aos="zoom-in" data-aos-delay="100">
                 <div class="text-[#0077b5] mb-4 flex justify-center group-hover:scale-110 transition-transform">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -34,7 +38,8 @@
             </a>
 
             <a href="https://wa.me/6287823928494" target="_blank"
-                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.2)] transition-all duration-300 group">
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.2)] transition-all duration-300 group"
+                data-aos="zoom-in" data-aos-delay="200">
                 <div class="text-[#25D366] mb-4 flex justify-center group-hover:scale-110 transition-transform">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -46,7 +51,8 @@
             </a>
 
             <a href="https://github.com/igoo7" target="_blank"
-                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-slate-100 hover:shadow-[0_0_20px_rgba(248,250,252,0.2)] transition-all duration-300 group">
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-slate-100 hover:shadow-[0_0_20px_rgba(248,250,252,0.2)] transition-all duration-300 group"
+                data-aos="zoom-in" data-aos-delay="300">
                 <div class="text-slate-100 mb-4 flex justify-center group-hover:scale-110 transition-transform">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
                         <path
@@ -57,11 +63,37 @@
                 <p class="text-slate-400 text-xs">igoo7</p>
             </a>
 
+            <a href="https://www.instagram.com/helmaesadiegoo?igsh=ODhkYXI2a294MHF1&utm_source=qr" target="_blank"
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-[#E1306C] hover:shadow-[0_0_20px_rgba(225,48,108,0.2)] transition-all duration-300 group"
+                data-aos="zoom-in" data-aos-delay="400">
+                <div class="text-[#E1306C] mb-4 flex justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-bold mb-2">Instagram</h3>
+                <p class="text-slate-400 text-xs">@helmaesadiegoo</p>
+            </a>
+
+            <a href="https://www.tiktok.com/@iigoooooo?_r=1&_t=ZS-92L12Fnd4Ol" target="_blank"
+                class="p-8 bg-slate-900 border border-slate-800 rounded-3xl hover:border-slate-100 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 group"
+                data-aos="zoom-in" data-aos-delay="500">
+                <div class="text-white mb-4 flex justify-center group-hover:scale-110 transition-transform">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.1-3.34-3.12-3.35-5.47-.03-2.43 1.4-4.71 3.61-5.7 1.3-.61 2.82-.79 4.24-.49v4.03c-.5-.16-1.04-.19-1.56-.11-1.27.2-2.45 1.1-2.73 2.38-.1.44-.06.9.06 1.34.24.8 1.05 1.44 1.88 1.51.48.06.96-.03 1.4-.23.88-.43 1.4-1.35 1.44-2.32.04-4.62-.01-9.25-.02-13.87z" />
+                    </svg>
+                </div>
+                <h3 class="text-white font-bold mb-2">TikTok</h3>
+                <p class="text-slate-400 text-xs">@iigoooooo</p>
+            </a>
+
         </div>
 
-        <div
-            class="mt-12 inline-flex items-center gap-2 px-6 py-3 bg-slate-900/50 rounded-full border border-slate-800 text-slate-500 italic text-sm">
-            <svg class="w-4 h-4 text-white-500" fill="currentColor" viewBox="0 0 20 20">
+        <div class="mt-12 inline-flex items-center gap-2 px-6 py-3 bg-slate-900/50 rounded-full border border-slate-800 text-slate-500 italic text-sm"
+            data-aos="fade-up" data-aos-delay="600">
+            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                     d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                     clip-rule="evenodd" />

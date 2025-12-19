@@ -1,11 +1,11 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Proyek Saya')
+@section('title', 'Portofolio')
 
 @section('content')
     <div class="max-w-7xl mx-auto px-6 py-12">
         <div class="text-center mb-16">
-            <h1 class="text-4xl font-extrabold text-white mb-4">Koleksi <span class="text-blue-500">Proyek</span></h1>
+            <h1 class="text-4xl font-extrabold text-white mb-4">Portofolio <span class="text-blue-500">Saya</span></h1>
             <p class="text-slate-400 max-w-2xl mx-auto italic">Penjelasan detail mengenai peran teknis dan solusi yang saya
                 berikan pada setiap proyek.</p>
         </div>
