@@ -5,8 +5,10 @@
 @section('content')
     <div class="max-w-7xl mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
         <div class="lg:w-2/3 text-center lg:text-left">
-            <span class="text-blue-500 font-mono tracking-widest uppercase text-sm mb-4 block">Tersedia untuk kerja/Proyek
-                Freelance</span>
+            <span
+                class="text-white font-mono tracking-tighter uppercase text-[12px] md:text-sm font-black italic drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                Tersedia untuk Kerja <span class="text-cyan-300">/</span> Proyek Freelance
+            </span>
             <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 Halo, Saya <br> <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 text-blue-500">Helmaesa
@@ -18,8 +20,8 @@
                 <a href="/assets/cv_igo.pdf" download="cv_igo.pdf"
                     class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95 w-full sm:w-auto">
 
-                    <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>

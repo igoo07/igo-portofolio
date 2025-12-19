@@ -147,7 +147,7 @@
             <div
                 class="relative overflow-hidden p-6 md:p-8 bg-slate-950 border border-slate-800 rounded-2xl flex flex-col md:flex-row items-center gap-8 group hover:border-blue-500/30 transition-all duration-500">
                 <div class="relative w-full md:w-44 h-28 rounded-xl overflow-hidden bg-slate-900 shadow-inner">
-                    <img src="{{ asset('images/sertifikat-oracle.jpg') }}" alt="Oracle Certificate"
+                    <img src="/images/oracle.jpg" alt="Oracle Certificate"
                         class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-110">
                 </div>
 

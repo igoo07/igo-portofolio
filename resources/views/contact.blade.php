@@ -93,7 +93,7 @@
 
         <div class="mt-12 inline-flex items-center gap-2 px-6 py-3 bg-slate-900/50 rounded-full border border-slate-800 text-slate-500 italic text-sm"
             data-aos="fade-up" data-aos-delay="600">
-            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-4 h-4 text-white-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
                     d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                     clip-rule="evenodd" />

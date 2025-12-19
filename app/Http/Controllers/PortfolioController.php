@@ -30,14 +30,14 @@ class PortfolioController extends Controller
 {
     $projects = [
         [
-            'title' => 'Audit Mutu Internal UISI',
+            'title' => 'Audit Mutu Internal Bidang Akademik UISI',
             'description' => 'Sistem informasi untuk mengevaluasi standar mutu bidang akademik di UISI.',
             'details' => 'Bertanggung jawab dalam pengembangan modul penilaian, integrasi database antara sistem lama dan baru, serta memastikan keamanan data hasil audit menggunakan enkripsi standar.',
             'tech' => ['Laravel', 'ReactJS', 'MySQL', 'SDLC', 'Prototyping'],
             'image' => 'AMI.jpeg' // Simpan gambar ini di public/images/
         ],
         [
-            'title' => 'Travel-App (Open Trip)',
+            'title' => 'Travel-App (Trip Gresia)',
             'description' => 'Platform manajemen reservasi untuk penyedia jasa paket wisata.',
             'details' => 'Membangun fitur manajemen kuota otomatis, sistem booking real-time, dan dashboard admin untuk memantau status pembayaran serta manifes penumpang.',
             'tech' => ['Laravel', 'PHP', 'Tailwind'],
