@@ -10,8 +10,8 @@
             <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 Halo, Saya <br> <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 text-blue-500">Helmaesa
-                    Diego Putra
-                </span>
+                    Diego
+                    Putra</span>
             </h1>
 
             <div class="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -29,24 +29,17 @@
             </div>
         </div>
 
-        <div class="w-full lg:w-2/5">
-            <div class="bg-slate-900 border border-slate-800 p-5 md:p-6 rounded-3xl font-mono shadow-2xl relative">
-                <div class="flex gap-1.5 mb-4 opacity-30">
-                    <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                </div>
+        <div class="hidden lg:block lg:w-1/3">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-3xl font-mono shadow-2xl">
+                <pre class="text-sm leading-relaxed"><code class="text-left block text-blue-300">
+<span class="text-pink-500">class</span> <span class="text-yellow-400">Princeigo</span> {
+  <span class="text-blue-500">public</span> <span class="text-emerald-400">$role</span> = <span class="text-orange-400">'Front-End Dev'</span>;
+  <span class="text-blue-500">public</span> <span class="text-emerald-400">$location</span> = <span class="text-orange-400">'Jepara, ID'</span>;
 
-                <pre class="text-[11px] sm:text-xs md:text-sm leading-relaxed text-blue-300 overflow-x-auto">
-    <code class="text-left block">
-    <span class="text-pink-500">class</span> <span class="text-yellow-400">Princeigo</span> {
-      <span class="text-blue-500">public</span> <span class="text-emerald-400">$role</span> = <span class="text-orange-400">'Front-End Dev'</span>;
-      <span class="text-blue-500">public</span> <span class="text-emerald-400">$location</span> = <span class="text-orange-400">'Jepara, ID'</span>;
-
-      <span class="text-blue-500">public function</span> <span class="text-yellow-400">getSkills</span>() {
-        <span class="text-pink-500">return</span> [<span class="text-orange-400">'Laravel'</span>, <span class="text-orange-400">'React'</span>, <span class="text-orange-400">'Tailwind'</span>];
-      }
-    }</code></pre>
+  <span class="text-blue-500">public function</span> <span class="text-yellow-400">getSkills</span>() {
+    <span class="text-pink-500">return</span> [<span class="text-orange-400">'Laravel'</span>, <span class="text-orange-400">'React'</span>, <span class="text-orange-400">'Tailwind'</span>];
+  }
+}</code></pre>
             </div>
         </div>
     </div>
