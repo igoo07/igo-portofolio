@@ -25,6 +25,20 @@
     </script>
 
     <style>
+        /* Menghilangkan transisi sementara saat pergantian tema */
+        .no-transitions *,
+        .no-transitions *::before,
+        .no-transitions *::after {
+            transition: none !important;
+        }
+
+        /* Optimasi performa untuk perangkat mobile */
+        body {
+            -webkit-tap-highlight-color: transparent;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
         @media (max-width: 768px) {
             #nav-menu {
                 /* Menghilangkan scrollbar di menu mobile */
@@ -627,6 +641,28 @@
         });
 
         const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            // 1. Tambahkan class untuk mematikan transisi di seluruh elemen
+            document.documentElement.classList.add('no-transitions');
+
+            // 2. Logika ganti tema Anda (Dark/Light)
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+
+            // 3. Gunakan requestAnimationFrame agar browser selesai merender tema baru
+            // baru kemudian nyalakan kembali animasinya
+            window.requestAnimationFrame(() => {
+                setTimeout(() => {
+                    document.documentElement.classList.remove('no-transitions');
+                }, 0);
+            });
+        });
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 
