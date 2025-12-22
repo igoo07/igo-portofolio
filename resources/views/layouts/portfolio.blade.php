@@ -178,6 +178,7 @@
             fill: #ffffff !important;
         }
     </style>
+
 </head>
 
 <body class="dynamic-bg overflow-x-hidden">
