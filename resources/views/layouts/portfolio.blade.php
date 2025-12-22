@@ -25,20 +25,6 @@
     </script>
 
     <style>
-        /* Menghilangkan transisi sementara saat pergantian tema */
-        .no-transitions *,
-        .no-transitions *::before,
-        .no-transitions *::after {
-            transition: none !important;
-        }
-
-        /* Optimasi performa untuk perangkat mobile */
-        body {
-            -webkit-tap-highlight-color: transparent;
-            backface-visibility: hidden;
-            transform: translateZ(0);
-        }
-
         @media (max-width: 768px) {
             #nav-menu {
                 /* Menghilangkan scrollbar di menu mobile */
@@ -56,19 +42,81 @@
             }
         }
 
-        /* 1. CSS Variables Dasar */
         :root {
             --bg-color: #020617;
-            --text-main: #cbd5e1;
-            --text-heading: #ffffff;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #94a3b8;
+            --text-heading: #f8fafc;
+            --border-color: rgba(255, 255, 255, 0.05);
+            --glass-bg: rgba(7, 12, 33, 0.7);
 
-            /* NAVBAR TETAP SESUAI PERMINTAAN */
-            --glass-bg: rgba(7, 12, 33, 0.95);
-            --nav-bg: rgba(7, 12, 33, 0.9);
+            /* Warna Gradasi Mode Gelap (Biru & Indigo Dalam) */
+            --gradient-1: rgba(30, 58, 138, 0.15);
+            --gradient-2: rgba(67, 56, 202, 0.15);
+            --gradient-3: rgba(2, 6, 23, 1);
+        }
 
-            --card-bg: #0f172a;
-            --badge-bg: #1e293b;
+        html.light {
+            --bg-color: #f8fafc;
+            --text-main: #475569;
+            --text-heading: #0f172a;
+            --border-color: rgba(0, 0, 0, 0.05);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+
+            /* Warna Gradasi Mode Terang (Biru Muda & Violet Soft) */
+            --gradient-1: rgba(186, 230, 255, 0.4);
+            --gradient-2: rgba(237, 233, 254, 0.4);
+            --gradient-3: rgba(248, 250, 252, 1);
+        }
+
+        html.light {
+            --bg-color: #f8fafc;
+            /* Slate 50 */
+            --text-main: #475569;
+            --text-heading: #0f172a;
+            --border-color: rgba(0, 0, 0, 0.05);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --card-bg: #ffffff;
+        }
+
+        /* 2. Latar Belakang Body Polos Bergradasi Profesional */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--gradient-3);
+            color: var(--text-main);
+            transition: background-color 0.5s ease, background-image 0.5s ease;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+
+            /* Mesh Gradient Profesional */
+            background-image:
+                radial-gradient(at 0% 0%, var(--gradient-1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, var(--gradient-2) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, var(--gradient-1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Hapus elemen-elemen orb lama agar tidak bertabrakan */
+        .body-orb,
+        .bg-visual,
+        .blob-bg {
+            display: none !important;
+        }
+
+        /* Hapus Tekstur Grain & Orbs Lama */
+        body::before,
+        .body-orb,
+        .bg-visual,
+        .blob-bg {
+            display: none !important;
+        }
+
+        /* 3. Perbaikan Glass Effect agar lebih menyatu dengan background polos */
+        .glass-effect {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
         }
 
         /* 2. LIGHT MODE - Profesional & Clean */
@@ -93,8 +141,7 @@
             overflow-x: hidden;
         }
 
-        /* Lapisan Tekstur Grain (Elegan & Mewah) */
-        body::before {
+        Lapisan Tekstur Grain (Elegan & Mewah) body::before {
             content: "";
             position: fixed;
             inset: 0;
@@ -118,7 +165,7 @@
         .orb-blue {
             width: 600px;
             height: 600px;
-            background: #3b82f6;
+            background: #9fc4ff;
             top: -10%;
             left: -5%;
         }
@@ -305,6 +352,8 @@
             pointer-events: none;
         }
 
+
+
         /* 2. Desain Footer Profesional */
         .modern-footer {
             position: relative;
@@ -425,23 +474,6 @@
 </head>
 
 <body class="dynamic-bg overflow-x-hidden">
-
-    <div class="body-orb orb-blue"></div>
-    <div class="body-orb orb-purple"></div>
-    <div class="bg-visual">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-    </div>
-    <div id="top-progress"></div>
-    <div id="transition-overlay"></div>
-
-    <div class="fixed inset-0 z-[-1] overflow-hidden dynamic-bg">
-        <div class="absolute inset-0 transition-opacity duration-500"
-            style="background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05), transparent);"></div>
-
-        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600 rounded-full blob-bg"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-600 rounded-full blob-bg"></div>
-    </div>
 
     <header class="fixed w-full top-0 z-50 px-4 md:px-6 py-4 md:py-6">
         <nav
@@ -641,28 +673,6 @@
         });
 
         const themeToggleBtn = document.getElementById('theme-toggle');
-
-        themeToggleBtn.addEventListener('click', function() {
-            // 1. Tambahkan class untuk mematikan transisi di seluruh elemen
-            document.documentElement.classList.add('no-transitions');
-
-            // 2. Logika ganti tema Anda (Dark/Light)
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-
-            // 3. Gunakan requestAnimationFrame agar browser selesai merender tema baru
-            // baru kemudian nyalakan kembali animasinya
-            window.requestAnimationFrame(() => {
-                setTimeout(() => {
-                    document.documentElement.classList.remove('no-transitions');
-                }, 0);
-            });
-        });
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
 

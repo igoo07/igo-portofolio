@@ -5,9 +5,8 @@
 @section('content')
     <div class="max-w-7xl mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
         <div class="lg:w-2/3 text-center lg:text-left">
-            <span
-                class="text-white font-mono tracking-tighter uppercase text-[12px] md:text-sm font-black italic drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-                Tersedia untuk Kerja <span class="text-cyan-300">/</span> Proyek Freelance
+            <span class="text-white font-mono tracking-tighter uppercase text-[12px] md:text-sm font-black italic">
+                Tersedia untuk Kerja <span class="text-white-300">/</span> Proyek Freelance
             </span>
             <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 Halo, Saya <br> <span
