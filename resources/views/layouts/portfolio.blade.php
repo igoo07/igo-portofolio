@@ -25,101 +25,173 @@
     </script>
 
     <style>
-        /* 1. CSS Variables Dasar (Dark Mode Tetap) */
+        @media (max-width: 768px) {
+            #nav-menu {
+                /* Menghilangkan scrollbar di menu mobile */
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+
+            #nav-menu::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Memastikan menu mobile muncul di atas elemen lain */
+            #nav-menu {
+                border: 1px solid var(--border-color);
+            }
+        }
+
+        /* 1. CSS Variables Dasar */
         :root {
             --bg-color: #020617;
             --text-main: #cbd5e1;
             --text-heading: #ffffff;
             --border-color: rgba(255, 255, 255, 0.08);
-            --glass-bg: rgba(15, 23, 42, 0.7);
+
+            /* NAVBAR TETAP SESUAI PERMINTAAN */
+            --glass-bg: rgba(7, 12, 33, 0.95);
+            --nav-bg: rgba(7, 12, 33, 0.9);
+
             --card-bg: #0f172a;
             --badge-bg: #1e293b;
         }
 
-        /* 2. LIGHT MODE - Profesional Gradient Reset */
+        /* 2. LIGHT MODE - Profesional & Clean */
         html.light {
-            /* Latar belakang putih dengan gradasi ke biru pucat yang sangat lembut */
-            --bg-color: #ffffff;
-            --bg-gradient: radial-gradient(at 0% 0%, rgba(240, 247, 255, 1) 0, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(245, 243, 255, 1) 0, transparent 50%);
-
+            --bg-color: #f8fafc;
             --text-main: #334155;
             --text-heading: #0f172a;
-            /* Navy sangat gelap agar mewah */
             --border-color: rgba(0, 0, 0, 0.06);
             --glass-bg: rgba(255, 255, 255, 0.85);
             --card-bg: #ffffff;
             --badge-bg: #f1f5f9;
         }
 
-        /* 3. Global Styles & Background Force */
+        /* 3. Global Styles & Profesional Background Animation */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            transition: background-color 0.5s ease, color 0.5s ease;
-            opacity: 0;
+            transition: background-color 0.5s ease;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Memberikan efek gradasi hanya pada light mode tanpa merusak dark mode */
-        html.light body {
-            background-image: var(--bg-gradient);
-            background-attachment: fixed;
+        /* Lapisan Tekstur Grain (Elegan & Mewah) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* 4. Perbaikan Visual Portfolio (Light Mode) */
+        /* Elemen Orbs Bergerak (Background Only) */
+        .body-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -2;
+            opacity: 0.15;
+            animation: floatOrb 20s infinite alternate ease-in-out;
+            pointer-events: none;
+        }
+
+        .orb-blue {
+            width: 600px;
+            height: 600px;
+            background: #3b82f6;
+            top: -10%;
+            left: -5%;
+        }
+
+        .orb-purple {
+            width: 500px;
+            height: 500px;
+            background: #8b5cf6;
+            bottom: 10%;
+            right: -5%;
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(50px, 100px) scale(1.1);
+            }
+        }
+
+        html.light .body-orb {
+            opacity: 0.08;
+        }
+
+        /* 4. Navbar & Glass Effect (Fitur Tidak Diubah, Hanya Variabel) */
+        .glass-effect {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--border-color);
+        }
+
+        /* 5. FIX TOTAL: Tombol Download & Verified Badge */
+        html.light .bg-blue-600,
+        html.light .bg-blue-500,
+        html.light a.bg-blue-600,
+        html.light a[href$=".pdf"],
+        html.light .download-pdf-btn,
+        html.light .bg-blue-600 span,
+        html.light .bg-blue-600 i,
+        html.light .bg-blue-600 svg {
+            color: #ffffff !important;
+            fill: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }
+
+        html.light a.bg-blue-600:hover,
+        html.light .download-pdf-btn:hover {
+            color: #ffffff !important;
+            opacity: 0.9;
+        }
+
+        /* 6. Elemen Teks Lainnya (Mode Terang) */
         html.light .adaptive-heading,
         html.light h1,
         html.light h2,
         html.light h3,
         html.light h4,
-        html.light .text-white,
-        html.light .text-slate-100,
-        html.light .text-slate-200 {
+        html.light .text-white:not(.bg-blue-600 *):not(.bg-blue-600) {
             color: var(--text-heading) !important;
         }
 
         html.light .adaptive-text,
-        html.light p,
-        html.light span:not(.text-blue-500):not(.text-blue-600),
-        html.light .text-slate-400,
-        html.light .text-slate-500 {
+        html.light p:not(.bg-blue-600 *),
+        html.light span:not(.text-blue-500):not(.text-blue-600):not(.bg-blue-600 *) {
             color: var(--text-main) !important;
-            opacity: 1 !important;
         }
 
-        /* Badge & Card Refinement */
+        /* Card & Badge Teknologi */
         html.light [class*="bg-slate-800"],
         html.light [class*="bg-slate-900"],
-        html.light [class*="bg-slate-950"],
-        html.light .bg-slate-900\/50 {
+        html.light [class*="bg-slate-950"] {
             background-color: var(--badge-bg) !important;
             color: #475569 !important;
             border: 1px solid rgba(0, 0, 0, 0.04) !important;
-            font-weight: 600;
         }
 
         html.light .glass-effect,
         html.light .bg-slate-900,
         html.light .rounded-2xl.bg-slate-950 {
             background-color: var(--card-bg) !important;
-            border: 1px solid var(--border-color) !important;
-            /* Shadow yang lebih dalam dan halus */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03) !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.03) !important;
         }
 
-        /* 5. Elemen Dekoratif & Navigasi */
-        .blob-bg {
-            opacity: 0.3;
-            filter: blur(120px);
-            transition: opacity 0.5s ease;
-        }
-
-        html.light .blob-bg {
-            opacity: 0.2;
-        }
-
+        /* Navigasi Aktif */
         .nav-item-active {
             color: #3b82f6 !important;
             position: relative;
@@ -135,7 +207,6 @@
             height: 2px;
             background: #3b82f6;
             border-radius: 10px;
-            box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
         }
 
         #top-progress {
@@ -148,34 +219,192 @@
             z-index: 9999;
         }
 
-        /* FORCE WHITE TEXT FOR DOWNLOAD BUTTONS IN LIGHT MODE */
-        /* Target: class khusus, link dengan background biru, link download, dan link file pdf */
-        html.light .download-pdf-btn,
-        html.light a.bg-blue-600,
-        html.light a[class*="bg-blue-"],
-        html.light a[href*="download"],
-        html.light a[href$=".pdf"] {
-            color: #ffffff !important;
-            /* Paksa teks jadi putih murni */
-            -webkit-text-fill-color: #ffffff !important;
-            /* Untuk browser berbasis webkit */
+        /* 7. Footer Styling & Animated Border */
+        footer {
+            position: relative;
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+            margin-top: 5rem;
+            background: transparent;
         }
 
-        /* Memastikan teks tetap putih saat di-hover atau aktif */
-        html.light a.bg-blue-600:hover,
-        html.light a[href$=".pdf"]:hover,
-        html.light a[href$=".pdf"]:focus {
-            color: #ffffff !important;
-            opacity: 0.9;
+        /* Garis Batas Atas Footer yang Menarik */
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            /* Tidak full width agar lebih artistik */
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(59, 130, 246, 0.5),
+                    rgba(139, 92, 246, 0.5),
+                    transparent);
         }
 
-        /* Memastikan icon di dalam tombol download juga berwarna putih */
-        html.light a.bg-blue-600 svg,
-        html.light a[href$=".pdf"] svg,
-        html.light a.bg-blue-600 i,
-        html.light a[href$=".pdf"] i {
-            color: #ffffff !important;
-            fill: #ffffff !important;
+        /* Penambahan Efek Glow di tengah garis */
+        footer::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            filter: blur(4px);
+            opacity: 0.6;
+        }
+
+        /* Penyesuaian Footer pada Light Mode */
+        html.light footer::before {
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(0, 0, 0, 0.1),
+                    rgba(0, 0, 0, 0.1),
+                    transparent);
+        }
+
+        html.light footer::after {
+            background: #3b82f6;
+            opacity: 0.3;
+        }
+
+        /* 1. Latar Belakang Body Profesional */
+        body {
+            background-color: var(--bg-color);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background Mesh dinamis */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.03) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.03) 0, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* 2. Desain Footer Profesional */
+        .modern-footer {
+            position: relative;
+            margin-top: 10rem;
+            padding-bottom: 3rem;
+            background: transparent;
+        }
+
+        /* Border Atas Mewah */
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    var(--border-color) 20%,
+                    var(--border-color) 80%,
+                    transparent 100%);
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .footer-divider::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            filter: blur(2px);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to bottom right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        html.light .footer-brand h2 {
+            background: linear-gradient(to bottom right, #0f172a, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #3b82f6;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .footer-link:hover {
+            color: #3b82f6;
+            transform: translateX(8px);
+        }
+
+        .footer-copyright {
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-brand h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Opsional: Membuat widget di footer sedikit bergaya Glass */
+        .footer-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
         }
     </style>
 
@@ -183,6 +412,12 @@
 
 <body class="dynamic-bg overflow-x-hidden">
 
+    <div class="body-orb orb-blue"></div>
+    <div class="body-orb orb-purple"></div>
+    <div class="bg-visual">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
     <div id="top-progress"></div>
     <div id="transition-overlay"></div>
 
@@ -196,9 +431,9 @@
 
     <header class="fixed w-full top-0 z-50 px-4 md:px-6 py-4 md:py-6">
         <nav
-            class="max-w-6xl mx-auto glass-effect rounded-2xl px-3 md:px-8 h-20 flex justify-between items-center shadow-2xl">
+            class="max-w-6xl mx-auto glass-effect rounded-2xl px-3 md:px-8 h-20 flex justify-between items-center shadow-2xl relative">
 
-            <a href="{{ route('home') }}" class="page-transition-link flex items-center gap-2 group">
+            <a href="{{ route('home') }}" class="page-transition-link flex items-center gap-2 group z-50">
                 <div
                     class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-500">
                     <span class="text-white font-black text-xl">I</span>
@@ -208,8 +443,8 @@
                 </span>
             </a>
 
-            <div
-                class="flex items-center bg-slate-500/10 dark:bg-slate-500/10 p-1.5 rounded-xl border border-black/5 dark:border-white/5 mx-2 overflow-x-auto no-scrollbar">
+            <div id="nav-menu"
+                class="hidden md:flex flex-col md:flex-row absolute md:relative top-24 md:top-0 left-0 w-full md:w-auto bg-slate-900/90 md:bg-slate-500/10 backdrop-blur-xl md:backdrop-blur-none p-4 md:p-1.5 rounded-2xl md:rounded-xl border border-white/10 md:border-black/5 dark:md:border-white/5 mx-0 md:mx-2 z-40 transition-all duration-300 shadow-xl md:shadow-none">
                 @php
                     $navItems = [
                         ['route' => 'home', 'label' => 'Home'],
@@ -221,13 +456,13 @@
                 @endphp
                 @foreach ($navItems as $item)
                     <a href="{{ route($item['route']) }}"
-                        class="page-transition-link px-4 py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap {{ request()->routeIs($item['route']) ? 'nav-item-active' : 'adaptive-text hover:text-blue-500' }}">
+                        class="page-transition-link px-4 py-3 md:py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap {{ request()->routeIs($item['route']) ? 'nav-item-active bg-blue-600/10 md:bg-transparent' : 'adaptive-text hover:text-blue-500' }}">
                         {{ $item['label'] }}
                     </a>
                 @endforeach
             </div>
 
-            <div class="flex items-center gap-2 md:gap-4 shrink-0">
+            <div class="flex items-center gap-2 md:gap-4 shrink-0 z-50">
                 <button id="theme-toggle"
                     class="p-2.5 rounded-xl glass-effect hover:scale-110 active:scale-95 transition-all adaptive-heading">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -240,10 +475,20 @@
                         </path>
                     </svg>
                 </button>
+
                 <a href="{{ route('contact') }}"
-                    class="page-transition-link hidden md:block px-6 py-2.5 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 active:scale-95 transition-all">
+                    class="page-transition-link hidden lg:block px-6 py-2.5 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-600/20 hover:bg-blue-700 active:scale-95 transition-all">
                     Contact
                 </a>
+
+                <button id="mobile-menu-button" class="md:hidden p-2.5 rounded-xl glass-effect adaptive-heading">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -296,7 +541,8 @@
                     Tailwind.</p>
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                    <span class="adaptive-text text-[10px] font-bold uppercase tracking-widest opacity-70">Available for
+                    <span class="adaptive-text text-[10px] font-bold uppercase tracking-widest opacity-70">Available
+                        for
                         Freelance</span>
                 </div>
             </div>
@@ -307,6 +553,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navMenu = document.getElementById('nav-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle Menu
+            navMenu.classList.toggle('hidden');
+            navMenu.classList.toggle('flex');
+
+            // Toggle Icon
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Menutup menu saat klik di luar (optional)
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                navMenu.classList.add('hidden');
+                navMenu.classList.remove('flex');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
         AOS.init({
             duration: 1000,
             once: true,

@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="max-w-6xl mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold text-white mb-16 italic">
+        <h1 class="text-4xl font-bold text-white mb-16 italic text-center">
             <span class="text-blue-500">About</span> me
         </h1>
 
