@@ -1,13 +1,13 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Portofolio')
+@section('title', 'Prince.Igo | Projects')
 
 @section('content')
     <div class="max-w-7xl mx-auto px-6 py-12">
         <div class="text-center mb-16">
-            <h1 class="text-4xl font-extrabold text-white mb-4">Portofolio <span class="text-blue-500">Saya</span></h1>
-            <p class="text-slate-400 max-w-2xl mx-auto italic">Penjelasan detail mengenai peran teknis dan solusi yang saya
-                berikan pada setiap proyek.</p>
+            <h1 class="text-4xl font-extrabold text-white mb-4">My <span class="text-blue-500">Projects</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto italic">Detailed explanation of the technical roles and solutions I
+                provided for each project.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-10">
@@ -17,7 +17,7 @@
                     <div class="h-64 overflow-hidden relative bg-slate-800">
                         <img src="/images/{{ $project['image'] }}" alt="{{ $project['title'] }}"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                            onerror="this.src='https://via.placeholder.com/800x450/0f172a/3b82f6?text=Gambar+Kosong'">
+                            onerror="this.src='https://via.placeholder.com/800x450/0f172a/3b82f6?text=Empty+Image'">
                         <div class="absolute bottom-4 left-4">
                             <span
                                 class="px-3 py-1 bg-blue-600 text-white text-[10px] font-bold uppercase rounded-md shadow-lg italic">Verified
@@ -32,7 +32,7 @@
                         <p class="text-blue-400 font-medium text-sm mb-4 italic">{{ $project['description'] }}</p>
 
                         <div class="border-t border-slate-800 pt-4 mb-6">
-                            <h4 class="text-slate-300 text-xs font-bold uppercase tracking-widest mb-2">Detail Pekerjaan:
+                            <h4 class="text-slate-300 text-xs font-bold uppercase tracking-widest mb-2">Job Details:
                             </h4>
                             <p class="text-slate-400 text-sm leading-relaxed">
                                 {{ $project['details'] }}

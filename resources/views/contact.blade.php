@@ -1,13 +1,13 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Kontak')
+@section('title', 'Prince.Igo | Contact')
 
 @section('content')
     <div class="max-w-6xl mx-auto px-6 text-center py-12">
-        <h1 class="text-4xl font-bold text-white mb-6 italic" data-aos="fade-up">Mari <span
-                class="text-blue-500">Terhubung!</span></h1>
-        <p class="text-slate-400 mb-12" data-aos="fade-up" data-aos-delay="100">Saya terbuka untuk kolaborasi proyek atau
-            peluang kerja full-time.</p>
+        <h1 class="text-4xl font-bold text-white mb-6 italic" data-aos="fade-up">Let's <span
+                class="text-blue-500">Connect!</span></h1>
+        <p class="text-slate-400 mb-12" data-aos="fade-up" data-aos-delay="100">I am open to project collaborations or
+            full-time work opportunities.</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -98,7 +98,7 @@
                     d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                     clip-rule="evenodd" />
             </svg>
-            Bangsri, Jepara, Jawa Tengah, Indonesia
+            Bangsri, Jepara, Central Java, Indonesia
         </div>
     </div>
 @endsection

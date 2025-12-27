@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Helmaesa Diego Putra')</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/images/prince.png') }}">
+    <title>@yield('title', 'GO.')</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -27,7 +28,6 @@
     <style>
         @media (max-width: 768px) {
             #nav-menu {
-                /* Menghilangkan scrollbar di menu mobile */
                 -ms-overflow-style: none;
                 scrollbar-width: none;
             }
@@ -36,7 +36,6 @@
                 display: none;
             }
 
-            /* Memastikan menu mobile muncul di atas elemen lain */
             #nav-menu {
                 border: 1px solid var(--border-color);
             }
@@ -44,7 +43,6 @@
 
         :root {
             --bg-color: #f8fafc;
-            /* Slate 50 */
             --text-main: #334155;
             --text-heading: #0f172a;
             --border-color: rgba(0, 0, 0, 0.05);
@@ -52,7 +50,6 @@
 
         html:not(.light) {
             --bg-color: #020617;
-            /* Slate 950 */
             --text-main: #94a3b8;
             --text-heading: #f8fafc;
             --border-color: rgba(255, 255, 255, 0.05);
@@ -66,20 +63,17 @@
             transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Tambahkan efek Grain yang sangat tipis (Hanya jika ingin tekstur mewah) */
         body::after {
             content: "";
             position: fixed;
             inset: 0;
             z-index: -1;
             opacity: 0.2;
-            /* Sangat tipis */
             pointer-events: none;
             background-image: url("https://grainy-gradients.vercel.app/noise.svg");
             filter: contrast(120%) brightness(100%);
         }
 
-        /* Hilangkan semua CSS dekorasi lama yang bertabrakan */
         .body-orb,
         .orb,
         .bg-visual,
@@ -87,7 +81,6 @@
             display: none !important;
         }
 
-        /* 2. LIGHT MODE - Profesional & Clean */
         html.light {
             --bg-color: #f8fafc;
             --text-main: #334155;
@@ -98,7 +91,6 @@
             --badge-bg: #f1f5f9;
         }
 
-        /* 3. Global Styles & Profesional Background Animation */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-color);
@@ -109,7 +101,7 @@
             overflow-x: hidden;
         }
 
-        Lapisan Tekstur Grain (Elegan & Mewah) body::before {
+        body::before {
             content: "";
             position: fixed;
             inset: 0;
@@ -119,7 +111,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* Elemen Orbs Bergerak (Background Only) */
         .body-orb {
             position: fixed;
             border-radius: 50%;
@@ -161,14 +152,12 @@
             opacity: 0.08;
         }
 
-        /* 4. Navbar & Glass Effect (Fitur Tidak Diubah, Hanya Variabel) */
         .glass-effect {
             background: var(--glass-bg) !important;
             backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--border-color);
         }
 
-        /* 5. FIX TOTAL: Tombol Download & Verified Badge */
         html.light .bg-blue-600,
         html.light .bg-blue-500,
         html.light a.bg-blue-600,
@@ -188,7 +177,6 @@
             opacity: 0.9;
         }
 
-        /* 6. Elemen Teks Lainnya (Mode Terang) */
         html.light .adaptive-heading,
         html.light h1,
         html.light h2,
@@ -204,7 +192,6 @@
             color: var(--text-main) !important;
         }
 
-        /* Card & Badge Teknologi */
         html.light [class*="bg-slate-800"],
         html.light [class*="bg-slate-900"],
         html.light [class*="bg-slate-950"] {
@@ -220,7 +207,6 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.03) !important;
         }
 
-        /* Navigasi Aktif */
         .nav-item-active {
             color: #3b82f6 !important;
             position: relative;
@@ -248,7 +234,6 @@
             z-index: 9999;
         }
 
-        /* 7. Footer Styling & Animated Border */
         footer {
             position: relative;
             padding-top: 4rem;
@@ -257,7 +242,6 @@
             background: transparent;
         }
 
-        /* Garis Batas Atas Footer yang Menarik */
         footer::before {
             content: "";
             position: absolute;
@@ -265,7 +249,6 @@
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            /* Tidak full width agar lebih artistik */
             height: 1px;
             background: linear-gradient(90deg,
                     transparent,
@@ -274,7 +257,6 @@
                     transparent);
         }
 
-        /* Penambahan Efek Glow di tengah garis */
         footer::after {
             content: "";
             position: absolute;
@@ -288,7 +270,6 @@
             opacity: 0.6;
         }
 
-        /* Penyesuaian Footer pada Light Mode */
         html.light footer::before {
             background: linear-gradient(90deg,
                     transparent,
@@ -302,14 +283,12 @@
             opacity: 0.3;
         }
 
-        /* 1. Latar Belakang Body Profesional */
         body {
             background-color: var(--bg-color);
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Background Mesh dinamis */
         body::before {
             content: "";
             position: fixed;
@@ -320,9 +299,6 @@
             pointer-events: none;
         }
 
-
-
-        /* 2. Desain Footer Profesional */
         .modern-footer {
             position: relative;
             margin-top: 10rem;
@@ -330,7 +306,6 @@
             background: transparent;
         }
 
-        /* Border Atas Mewah */
         .footer-divider {
             width: 100%;
             height: 1px;
@@ -411,7 +386,6 @@
             font-size: 0.875rem;
         }
 
-        /* Responsif */
         @media (max-width: 768px) {
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -423,7 +397,6 @@
             }
         }
 
-        /* Opsional: Membuat widget di footer sedikit bergaya Glass */
         .footer-card {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
@@ -443,7 +416,7 @@
 
 <body class="dynamic-bg overflow-x-hidden">
 
-    <body class="overflow-x-hidden antialiased">
+    <div class="overflow-x-hidden antialiased">
         <div id="top-progress"></div>
         <div id="transition-overlay"></div>
 
@@ -459,30 +432,31 @@
             <nav
                 class="max-w-6xl mx-auto glass-effect rounded-2xl px-3 md:px-8 h-20 flex justify-between items-center shadow-2xl relative">
 
-                <a href="{{ route('home') }}" class="page-transition-link flex items-center gap-2 group z-50">
+                <a href="{{ route('home') }}"
+                    class="page-transition-link flex items-center gap-0.5 group z-50 relative">
                     <div
-                        class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-500">
-                        <span class="text-white font-black text-xl">I</span>
+                        class="group-hover:rotate-12 transition-transform duration-500 flex items-center justify-center">
+                        <img src="images/mahkota.png" alt="Icon" class="w-20 h-20 object-contain">
                     </div>
-                    <span class="font-black text-xl tracking-tighter uppercase italic adaptive-heading">
+                    <span class="font-black text-xl tracking-tighter uppercase italic text-white ml-[-10px]">
                         GO<span class="text-blue-500">.</span>
                     </span>
                 </a>
 
                 <div id="nav-menu"
-                    class="hidden md:flex flex-col md:flex-row absolute md:relative top-24 md:top-0 left-0 w-full md:w-auto bg-slate-900/90 md:bg-slate-500/10 backdrop-blur-xl md:backdrop-blur-none p-4 md:p-1.5 rounded-2xl md:rounded-xl border border-white/10 md:border-black/5 dark:md:border-white/5 mx-0 md:mx-2 z-40 transition-all duration-300 shadow-xl md:shadow-none">
+                    class="hidden md:flex flex-col md:flex-row absolute md:relative top-24 md:top-0 left-0 w-full md:w-auto bg-slate-900/90 md:bg-slate-500/10 backdrop-blur-xl md:backdrop-blur-none p-4 md:p-1.5 rounded-2xl md:rounded-xl border border-white/10 mx-0 md:mx-2 z-40 transition-all duration-300 shadow-xl md:shadow-none">
                     @php
                         $navItems = [
                             ['route' => 'home', 'label' => 'Home'],
                             ['route' => 'about', 'label' => 'About'],
-                            ['route' => 'experience', 'label' => 'Exp'],
-                            ['route' => 'projects.index', 'label' => 'Portfolio'],
+                            ['route' => 'experience', 'label' => 'Experience'],
+                            ['route' => 'projects.index', 'label' => 'Projects'],
                             ['route' => 'contact', 'label' => 'Contact'],
                         ];
                     @endphp
                     @foreach ($navItems as $item)
                         <a href="{{ route($item['route']) }}"
-                            class="page-transition-link px-4 py-3 md:py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap {{ request()->routeIs($item['route']) ? 'nav-item-active bg-blue-600/10 md:bg-transparent' : 'adaptive-text hover:text-blue-500' }}">
+                            class="page-transition-link px-4 py-3 md:py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap text-white {{ request()->routeIs($item['route']) ? 'nav-item-active bg-blue-600/20 md:bg-blue-600/10' : 'hover:text-blue-400' }}">
                             {{ $item['label'] }}
                         </a>
                     @endforeach
@@ -490,7 +464,7 @@
 
                 <div class="flex items-center gap-2 md:gap-4 shrink-0 z-50">
                     <button id="theme-toggle"
-                        class="p-2.5 rounded-xl glass-effect hover:scale-110 active:scale-95 transition-all adaptive-heading">
+                        class="p-2.5 rounded-xl glass-effect hover:scale-110 active:scale-95 transition-all text-white">
                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
@@ -507,7 +481,7 @@
                         Contact
                     </a>
 
-                    <button id="mobile-menu-button" class="md:hidden p-2.5 rounded-xl glass-effect adaptive-heading">
+                    <button id="mobile-menu-button" class="md:hidden p-2.5 rounded-xl glass-effect text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
@@ -528,51 +502,63 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div class="md:col-span-2 space-y-6">
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                                <span class="text-white font-black text-sm">I</span>
+                            <div
+                                class="group-hover:rotate-12 transition-transform duration-500 flex items-center justify-center">
+                                <img src="images/mahkota.png" alt="Icon" class="w-20 h-20 object-contain">
                             </div>
-                            <span class="adaptive-heading font-black text-2xl tracking-tighter uppercase italic">GO<span
-                                    class="text-blue-500">.</span></span>
+                            <span class="font-black text-xl tracking-tighter uppercase italic text-white ml-[-10px]">
+                                GO<span class="text-blue-500">.</span>
+                            </span>
                         </div>
-                        <p class="adaptive-text text-sm leading-relaxed max-w-sm">
-                            Membangun pengalaman digital yang bermakna melalui kode yang presisi dan desain yang
-                            intuitif.
+                        <p class="text-white text-sm leading-relaxed max-w-sm">
+                            Building meaningful digital experiences through precise code and intuitive design.
                         </p>
                     </div>
 
                     <div class="space-y-6">
-                        <h4 class="adaptive-heading font-bold uppercase tracking-widest text-xs">Navigation</h4>
+                        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Navigation</h4>
                         <ul class="space-y-4 text-sm font-medium">
-                            <li><a href="{{ route('projects.index') }}"
-                                    class="page-transition-link adaptive-text hover:text-blue-500 transition">Portfolio</a>
+                            <li>
+                                <a href="{{ route('projects.index') }}"
+                                    class="page-transition-link text-white hover:text-blue-500 transition">
+                                    Portfolio
+                                </a>
                             </li>
-                            <li><a href="{{ route('about') }}"
-                                    class="page-transition-link adaptive-text hover:text-blue-500 transition">About
-                                    Me</a>
+                            <li>
+                                <a href="{{ route('about') }}"
+                                    class="page-transition-link text-white hover:text-blue-500 transition">
+                                    About Me
+                                </a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="space-y-6">
-                        <h4 class="adaptive-heading font-bold uppercase tracking-widest text-xs">Connect</h4>
+                        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Connect</h4>
                         <ul class="space-y-4 text-sm font-medium">
-                            <li><a href="https://wa.me/6287823928494" target="_blank"
-                                    class="adaptive-text hover:text-[#25D366] transition">WhatsApp</a></li>
-                            <li><a href="#" class="adaptive-text hover:text-blue-400 transition">LinkedIn</a></li>
+                            <li>
+                                <a href="https://wa.me/6287823928494" target="_blank"
+                                    class="text-white hover:text-[#25D366] transition">
+                                    WhatsApp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white hover:text-blue-400 transition">
+                                    LinkedIn
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
                 <div
                     class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black/5 dark:border-white/5 gap-4">
-                    <p class="adaptive-text text-xs font-mono opacity-50">&copy; 2025 PRINCEIGO. Built with Laravel &
-                        Tailwind.</p>
+                    <p class="text-white text-xs font-mono">&copy; 2025 PRINCEIGO. Built with Laravel & Tailwind.</p>
                     <div class="flex items-center gap-2">
                         <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                        <span
-                            class="adaptive-text text-[10px] font-bold uppercase tracking-widest opacity-70">Available
-                            for
-                            Freelance</span>
+                        <span class="text-white text-[10px] font-bold uppercase tracking-widest">
+                            Available for Freelance
+                        </span>
                     </div>
                 </div>
             </div>
@@ -588,16 +574,12 @@
             const closeIcon = document.getElementById('close-icon');
 
             mobileMenuButton.addEventListener('click', () => {
-                // Toggle Menu
                 navMenu.classList.toggle('hidden');
                 navMenu.classList.toggle('flex');
-
-                // Toggle Icon
                 hamburgerIcon.classList.toggle('hidden');
                 closeIcon.classList.toggle('hidden');
             });
 
-            // Menutup menu saat klik di luar (optional)
             document.addEventListener('click', (e) => {
                 if (!navMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
                     navMenu.classList.add('hidden');
@@ -685,6 +667,7 @@
                 });
             });
         </script>
-    </body>
+    </div>
+</body>
 
 </html>

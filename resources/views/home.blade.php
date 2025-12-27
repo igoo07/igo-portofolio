@@ -1,22 +1,22 @@
 @extends('layouts.portfolio')
 
-@section('title', 'Home')
+@section('title', 'Prince.Igo | Home')
 
 @section('content')
     <div class="max-w-7xl mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
         <div class="lg:w-2/3 text-center lg:text-left">
             <span class="text-white font-mono tracking-tighter uppercase text-[12px] md:text-sm font-black italic">
-                Tersedia untuk Kerja <span class="text-white-300">/</span> Proyek Freelance
+                Available for Hire <span class="text-white-300">/</span> Freelance Projects
             </span>
             <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
-                Halo, Saya <br> <span
+                Hi, I'm <br> <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 text-blue-500">Helmaesa
                     Diego
                     Putra</span>
             </h1>
 
             <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                <a href="/assets/cv_igo.pdf" download="cv_igo.pdf"
+                <a href="/assets/resume.pdf" download="Helmaesa Diego Putra_Resume.pdf"
                     class="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 active:scale-95 w-full sm:w-auto">
 
                     <svg class="w-5 h-5 group-hover:animate-bounce transition-transform" fill="none"
@@ -25,7 +25,7 @@
                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
 
-                    <span class="tracking-wide">Download CV</span>
+                    <span class="tracking-wide">Download Resume</span>
                 </a>
             </div>
         </div>

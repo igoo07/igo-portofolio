@@ -30,30 +30,30 @@ class PortfolioController extends Controller
 {
     $projects = [
         [
-            'title' => 'Audit Mutu Internal Bidang Akademik UISI',
-            'description' => 'Sistem informasi untuk mengevaluasi standar mutu bidang akademik di UISI.',
-            'details' => 'Bertanggung jawab dalam pengembangan modul penilaian, integrasi database antara sistem lama dan baru, serta memastikan keamanan data hasil audit menggunakan enkripsi standar.',
+            'title' => 'Internal Academic Quality Audit UISI',
+            'description' => 'An information system to evaluate academic quality standards at UISI.',
+            'details' => 'Responsible for developing the assessment module, integrating databases between legacy and new systems, and ensuring audit data security using standard encryption.',
             'tech' => ['Laravel', 'ReactJS', 'MySQL', 'SDLC', 'Prototyping'],
-            'image' => 'AMI.jpeg' // Simpan gambar ini di public/images/
+            'image' => 'AMI.jpeg'
         ],
         [
             'title' => 'Travel-App (Trip Gresia)',
-            'description' => 'Platform manajemen reservasi untuk penyedia jasa paket wisata.',
-            'details' => 'Membangun fitur manajemen kuota otomatis, sistem booking real-time, dan dashboard admin untuk memantau status pembayaran serta manifes penumpang.',
+            'description' => 'A reservation management platform for tour package service providers.',
+            'details' => 'Built an automated quota management feature, real-time booking system, and an admin dashboard to monitor payment status and passenger manifests.',
             'tech' => ['Laravel', 'PHP', 'Tailwind'],
             'image' => 'TRAVELAPP.jpeg'
         ],
         [
             'title' => 'Misidoc - Digital Health',
-            'description' => 'Aplikasi kesehatan untuk menghubungkan pasien dengan fasilitas medis.',
-            'details' => 'Mengembangkan antarmuka pencarian dokter berdasarkan spesialisasi dan lokasi terdekat, serta fitur riwayat rekam medis digital yang aman bagi pengguna.',
+            'description' => 'A healthcare application connecting patients with medical facilities.',
+            'details' => 'Developed a doctor search interface based on specialization and nearest location, as well as a secure digital medical record history feature for users.',
             'tech' => ['Laravel', 'MySQL', 'Bootsrap'],
             'image' => 'MISIDOC.jpeg'
         ],
         [
-            'title' => 'IoT Monitoring Tempat Sampah',
-            'description' => 'Sistem pintar pemantau volume sampah berbasis IoT.',
-            'details' => 'Integrasi perangkat keras menggunakan sensor ultrasonik HC-SR04 dan Raspberry Pi Pico untuk mengirimkan data volume ke dashboard web secara berkala melalui protokol HTTP.',
+            'title' => 'IoT Waste Bin Monitoring',
+            'description' => 'An IoT-based smart system for monitoring waste volume.',
+            'details' => 'Integrated hardware using HC-SR04 ultrasonic sensors and Raspberry Pi Pico to send volume data to a web dashboard periodically via HTTP protocol.',
             'tech' => ['IoT', 'Raspberry Pi Pico', 'Thonny', 'Web'],
             'image' => 'IOT.jpeg'
         ],
